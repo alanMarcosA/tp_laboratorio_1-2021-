@@ -101,7 +101,7 @@ int sortEmployees(Employee* list, int len, int order){
 }
 static void sortEmployeesAsc(Employee* list, int len){
 	int cmp;
-	for (int i = 0;  i < len -1; ++ i) {
+	for (int i = 0;  i < len -1; i++) {
 		for(int j=i+1; j<len ; j++){
 			if(list[i].isEmpty==FULL && list[j].isEmpty==FULL){
 				cmp=strcmp(list[i].lastName,list[j].lastName);
@@ -147,10 +147,10 @@ int printEmployees(Employee* list, int length){
 	statePrint=-1;
 	if(list != NULL && length > 0){
 		statePrint=0;
-		printf("Id - Name - LastName - Salary - Sector \n");
+		printf("Id -\t Name - LastName - Salary - Sector \n");
 		for(int i=0; i<length;i++){
 			if(list[i].isEmpty==FULL){
-				printf("%d \t %s \t %s \t %f \t %d \n",list[i].id,list[i].name,list[i].lastName,list[i].salary,list[i].sector);
+				printf("%d\t %s\t %s\t %.2f\t %d\t\n",list[i].id,list[i].name,list[i].lastName,list[i].salary,list[i].sector);
 			}
 		}
 	}
@@ -205,4 +205,21 @@ int cantEmployeesUpProm(Employee* list, int len,float promedio){
 		}
 	}
 	return stateCant;
+}
+
+int modifyEmployee(Employee* list,int id, int len, char name[],char lastName[],float salary,int sector){
+	int stateMod;
+	int index;
+	stateMod=-1;
+	if(list != NULL && len > 0){
+		index= findEmployeeById(list, len, id);
+		if(index != -1){
+			strcpy(list[index].name,name);
+			strcpy(list[index].lastName, lastName);
+			list[index].salary=salary;
+			list[index].sector=sector;
+			stateMod=0;
+		}
+	}
+	return stateMod;
 }

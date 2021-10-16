@@ -10,7 +10,7 @@ int printEmployeesSorted(Employee* list, int len){
 	int statePrint;
 	statePrint=-1;
 	if(list != NULL && len > 0){
-		if(sortEmployees(list, len, 1)==0){
+		if(sortEmployees(list, len, 0)==0){
 			if(printEmployees(list, len)==0){
 				statePrint=0;
 			}
@@ -32,7 +32,7 @@ int printInformesSalary(Employee* list, int len){
 				cantEmployeesAux=cantEmployeesUpProm(list, len, promedio);
 				if(cantEmployeesAux>=0){
 					statePrint=0;
-					printf("el total de salrios es %f, el promedio es %f \n y el total de emlpeados que superan el promedio es %d", totalSalary, promedio, cantEmployeesAux);
+					printf("el total de salrios es %.2f, el promedio es %.2f \n y el total de emlpeados que superan el promedio es %d \n", totalSalary, promedio, cantEmployeesAux);
 				}
 			}
 		}

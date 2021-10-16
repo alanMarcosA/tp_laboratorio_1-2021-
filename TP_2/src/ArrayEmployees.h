@@ -113,4 +113,6 @@ int cantEmployees(Employee* list, int len);
 int getTotalSalary(Employee* list, int len,float* totalSalary);
 
 int cantEmployeesUpProm(Employee* list, int len,float promedio);
+
+int modifyEmployee(Employee* list,int id, int len, char name[],char lastName[],float salary,int sector);
 #endif /* ARRAYEMPLOYEES_H_ */

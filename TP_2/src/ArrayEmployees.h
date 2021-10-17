@@ -110,9 +110,40 @@ int getId(void);
  */
 int cantEmployees(Employee* list, int len);
 
+
+/** \brief calcula el salario total de empleados.
+ *
+ * \param list Employee*
+ * \param leng int
+ * \param totalSalary float
+ * \return int
+ *
+ */
 int getTotalSalary(Employee* list, int len,float* totalSalary);
 
+/** \brief retorna la cantidad de empleados que superan el promedio en cuestion de salario.
+ *  o (-1) si ocurrio un error.
+ *
+ * \param list Employee*
+ * \param leng int
+ * \param promedio float
+ * \return int
+ *
+ */
 int cantEmployeesUpProm(Employee* list, int len,float promedio);
 
+/** \brief modify en la lisa de empleados a un empleado con la valores ingresados.
+ * en caso de error devuelve (-1)
+ * \param list employee*
+ * \param len int
+ * \param id int
+ * \param name[] char
+ * \param lastName[] char
+ * \param salary float
+ * \param sector int
+ * \return int Return (-1) if Error [Invalid length or NULL pointer or without
+ *	free space] - (0) if Ok
+ *
+ */
 int modifyEmployee(Employee* list,int id, int len, char name[],char lastName[],float salary,int sector);
 #endif /* ARRAYEMPLOYEES_H_ */
